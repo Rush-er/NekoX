@@ -43,6 +43,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import java.util.ArrayList;
 
 import cn.hutool.core.util.StrUtil;
+import tw.nekomimi.nekogram.proxy.tcp2ws.WsLoader;
 
 public class WsSettingsActivity extends BaseFragment {
 
@@ -300,7 +301,7 @@ public class WsSettingsActivity extends BaseFragment {
     }
 
     @Override
-    protected void onTransitionAnimationEnd(boolean isOpen, boolean backward) {
+    public void onTransitionAnimationEnd(boolean isOpen, boolean backward) {
         if (isOpen && !backward && currentProxyInfo == null) {
             ipField.requestFocus();
             AndroidUtilities.showKeyboard(ipField);
